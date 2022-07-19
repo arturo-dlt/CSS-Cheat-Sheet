@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#white-space {
+    height: 150px;
+}
+
+/* Banner */
+
+.banner {
+    background-image: url(../images/code-text-editor.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 450px;
+    position: relative;
+    font-family: 'Open Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+    position: absolute;
+    top: 0px;
+}
+
+.banner h1, h2 {
+    z-index: 1;
+    position: relative;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.banner h2 {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+/* Navigation */
+
+
+/* Cheat Sheets */
+
+.cheat-sheet {
+    margin: 0 auto;
+    max-width: 1250px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    padding: 50px;
+}
+
+.cheat-sheet h2 {
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #e8700d;
+}
+
+.line {
+    display: block;
+    background-color: #CACACA;
+    width: 76px;
+    height: 2px;
+    margin-bottom: 15px;
+    
+}
+
+h3 {
+    font-size: 17px;
+    padding: 5px 0px;
+}
+
+h4 {
+    color: #e8700d;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 40px;
+}
+
+p {
+    text-align: justify;
+    padding: 5px 0px;
+}
+
+ul {
+    margin: 10px 20px;
+}
+
+table {
+    margin: 30px auto;
+    width: 100%;
+    border-spacing: 0;
+}
+
+table, th, td {    
+    border-style: solid;
+    border-width: 0.25px;
+    border-color: rgba(178, 178, 178, 0.4);
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    background-color: rgb(246, 246, 246);
+}
+
+td {
+    text-align: justify;
+}
+
+code {
+    background-color: #d8d8d8;
+    font-size: smaller;
+    font-family: monospace;
+}
+
+.property {
+    background-color: #15141f;
+    color: #91d84e;
+    font-family: monospace;
+    font-size: 14px;
+    width: 20%;
+    text-align: left;
+}
+
+#value {
+    color: rgb(115, 231, 231);
+}
+
+/* Code Boxes */
+
+.code-box {
+    background-color: #15141f;
+    padding: 30px;
+    width: 450px;
+    margin: 30px auto;
+    border-radius: 5px;
+    color: #91d84e;
+    font-size: 13px;
+}
+
+.code-box p {
+    margin: 0;
+    padding: 0;
+}
+
+.indent {
+    margin-left: 30px !important;
+    text-align: left;
+}
+
+.html {
+    color: rgb(255, 100, 100);
+}
+
+.css {
+    color: rgb(115, 231, 231);
+}
+
+#attribute-name {
+    color: #91d84e;
+}
+
+#attribute-value {
+    color: rgb(255, 255, 113);
+}
+
+#css-value {
+    color: rgb(200, 121, 237);
+}

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cheat Sheet</title>
+    <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+
+<body>
+    <section class="banner">
+        <div class="overlay"></div>
+        <div>
+            <h1>Your one-stop place for CSS</h1>
+            <h2>I'm dumping everything I learn here</h2>
+        </div>
+    </section>
+
+<!-- Cheat Sheets -->
+
+    <section class="cheat-sheet">
+
+        <!-- Selectors -->
+
+        <section>
+            <h2>Selectors</h2>
+            <div class="line"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property">*</td>
+                        <td>Universal</td>
+                        <td>Let's you select every single element.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">h1</td>
+                        <td>Type</td>
+                        <td>Selects a specific HTML element.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">.banner</td>
+                        <td>Class</td>
+                        <td>You can apply styling to specific elements by creating a class in the HTML file and then referencing it in CSS. It is more specific than the type selector, so it will override it.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">#red-box</td>
+                        <td>ID</td>
+                        <td>Even more specific than type and class. You might want to use this for unique element styling that will not be used in other elements.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">color: red !important</td>
+                        <td>The !important Rule</td>
+                        <td>This rule can be used in CSS to add more importance to a property/value than normal. It will override ALL previous styling rules for that specific property on that element!</td>
+                    </tr>
+                    <tr>
+                        <td class="property">h1, h2, p</td>
+                        <td>Multiple Selectors</td>
+                        <td>You can apply styling to many elements in one single declaration, just separate the selectors with a comma. This prevents writing repetitive code.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">&lt;h2 class="style1 style2"&gt;</td>
+                        <td>Multiple Classes</td>
+                        <td>You can also apply more than one class to one single HTML element, just separate them with a space. This way you can combine styles whenever needed.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">li.redtitle</td>
+                        <td>Chaining</td>
+                        <td>In the given example, only the <code>&lt;li&gt;</code> elements with the <code>.redtitle</code> class will be affected by the styling. Other elements of the same type or with the same class will not be affected.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">.banner p</td>
+                        <td>Descendant Combinator</td>
+                        <td>We can do this separating the selectors with a space to select elements that are nested within other HTML elements. In this example, we can have a <code>&lt;div&gt;</code> with a class of <code>.banner</code> and then select the descendant <code>&lt;p&gt;</code> elements. You might find this useful to apply styling to specific HTML elements withing a parent element like a <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;section&gt;</code> or <code>&lt;div&gt;</code>.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">[href]</td>
+                        <td>HTML Attribute</td>
+                        <td>You can target a specific attribute in the HTML like the "href" attribute to style everything with a link.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">a[href*='Contact']</td>
+                        <td>Specific HTML Attribute</td>
+                        <td>You can target something even more granular by adding a specific type and/or attribute values. In the example, this will select every link that contains the word 'Contact'.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">a:hover</td>
+                        <td>Pseudo-class Selectors</td>
+                        <td> These will let you change styles when specific interactions occur, like adding a border in an <code>&lt;input&gt;</code> element to give it more focus, a link <code>&lt;a&gt;</code> changing color when you hover on it or a <code>&lt;button&gt;</code> being "disabled" and then set to "active" after you complete certain tasks. Pseudo-class selectors will give different "states" to elements. Some pseudo-classes are <code>:focus</code>, <code>:visited</code>, <code>:disabled</code>, and <code>:active</code>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>CSS TIPS AND TRICKS</h4>
+            <h3>Reset the stylesheet</h4>
+            <p>
+                It is considered good practice to RESET the whole default stylesheet as all major web browsers have default stylesheets. These are known as user agent stylesheets. These stylesheets usually have set default values for <code>padding</code> and <code>margin</code>, which is why many developers choose to reset their values so they can start working on a clean slate. User agent stylesheets also usually have the <code>box-sizing</code> set to the default <code>content-box</code> value.
+            </p>
+            <div class="code-box">
+                <p>* {</p>
+                <p class="indent css">     box-sizing: <span id="css-value">border-box</span>;</p>
+                <p class="indent css">     margin: <span id="css-value">0</span>;</p>
+                <p class="indent css">     padding: <span id="css-value">0</span>;</p>
+                <p>}</p>
+            </div>
+        </section>
+
+        <!-- The Box Model -->
+
+        <section>
+            <h2>The Box Model</h3>
+            <div class="line"></div>
+            <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Values</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property">height</td>
+                        <td class="property" id="value">length, auto, %</td>
+                        <td>It defines the height of an element. For example: 500px.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">width</td>
+                        <td class="property" id="value">length, auto, %</td>
+                        <td>Just like height, it helps define the dimensions of an element, in this case its width. For example: 90%.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">max-height</td>
+                        <td class="property" id="value">length, auto, %</td>
+                        <td>Limits how narrow or wide the element's box can be. This is useful to prevent the content to deform in ways we don't want it to in different screen sizes.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">max-width</td>
+                        <td class="property" id="value">length, auto, %</td>
+                        <td>Limits how wide an element's box can be. For example: 1250px.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">overflow</td>
+                        <td class="property" id="value">visible, hidden, scroll, auto</td>
+                        <td>Sometimes, when we define a <code>max-height</code>, the content can "spill" outside of its box. This property defines whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">visibility</td>
+                        <td class="property" id="value">visible, hidden</td>
+                        <td>On the same note, we can define if an element is hidden from our view. The box space it occupies will still be there, but we wouldn't see its content.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">border</td>
+                        <td class="property" id="value">2px solid green</td>
+                        <td>Border properties will let you change the "line" that surrounds an element. You can string the value with a space: width, style and color. You can even specify something with properties that target only one side of the border like <code>border-bottom-width</code> or <code>border-left-style</code>.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">border-width</td>
+                        <td class="property" id="value">thin, medium, thick or px</td>
+                        <td>Sets the width of an element's four borders.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">border-style</td>
+                        <td class="property" id="value">none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset</td>
+                        <td>Sets the style of an element's four borders. This one is absolutely necessary for the rest to work.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">border-color</td>
+                        <td class="property" id="value">color</td>
+                        <td>Sets the width of an element's four borders.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">border-radius</td>
+                        <td class="property" id="value">lenght, %</td>
+                        <td>It lets you create rounded corners. For example: 5px will make it slightly rounded. You can even go as far as creating a perfect circle by first creating an element with the same <code>width</code> and <code>height</code>, and then setting the <code>border-radius</code> equal to half the width of the box, which is 50%.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">padding</td>
+                        <td class="property" id="value">length, %</td>
+                        <td>An element's padding is the space between its content and its border. You can target all four sides with a single shorthand value or you can target each side with specific properties like <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">margin</td>
+                        <td class="property" id="value">length, %</td>
+                        <td>Margin works exactly like padding. Padding creates extra space within an element, while margin creates extra space around the element. You can also target each side with specific properties: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> and <code>margin-left</code>.</td>    
+                    </tr>
+                    <tr>
+                        <td class="property">margin</td>
+                        <td class="property" id="value">auto</td>
+                        <td>The <code>margin</code> property also lets you center content with the syntax <code>margin: 0 auto</code>. The "0" sets the top and bottom margins to 0 pixels and the "auto" instructs the browser to adjust the left and right margins until the element is centered within its containing element. In order to do so, a <code>width</code> must be set for that element.</td>    
+                    </tr>
+                </tbody>
+            </table>
+            <h4>CSS TIPS AND TRICKS</h4>
+            <h3>Shorthand Values</h3>
+            <p>
+                Some properties, like <code>padding</code>, <code>margin</code> and <code>border</code> can use "shorthand" values. This means they can have from one to four values in one single property. With four values, it will change, for example, the padding in this order: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>. With two values, the first value would change the <code>padding-top</code> AND <code>padding-bottom</code>, and the second value would change the <code>padding-right</code> AND <code>padding-left</code>. If it has only one value of "10px" then all sides will have a padding of 10px.
+            </p>
+            <p>
+                This applies to specific properties to change the border as well. For example, we can give different thickness to each side of an element if we add something like <code>border-width: thin medium 5px 10px</code>.  
+            </p>
+        </section>
+
+        <!-- Display and Positioning-->
+
+        <section>
+            <h2>Display and Positioning</h2>
+            <div class="line"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Values</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property">position</td>
+                        <td class="property" id="value">static</td>
+                        <td>This is the default <code>position</code> value in the normal document flow.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">position</td>
+                        <td class="property" id="value">relative</td>
+                        <td>The element will be positioned relative to its original <code>static</code> position and it will remain in the normal document flow. To move it, you need to use the <code>top</code>, <code>bottom</code>, <code>right</code> or <code>left</code> properties.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">position</td>
+                        <td class="property" id="value">absolute</td>
+                        <td>The element will be positioned relative to its closest positioned parent element. It will be removed from the normal document flow, which means all other elements on the page will ignore it and act like it is not present on the current flow.
+                        <br><br>
+                        <strong>Note:</strong> For <code>position: absolute</code> to work, it is required to add any type of coordinate to the element, such as <code>top</code>, <code>left</code>, <code>right</code> or <code>bottom</code> properties, even if it has a value of 0px.
+                        <br><br>
+                        <strong>Note 2:</strong> For <code>position: absolute</code> to work, the parent element HAS to be positioned as well. The default value of position is always unset, so if you don't specify the positioning of the parent, the <code>absolute</code> value of your child element will ignore everything on the page (remove itself from the normal document flow) and just stay in the upper left corner, unrelated to anything (it will base itself on the <code>&lt;body&gt;</code> by default). Absolute positioning will be relative to its CLOSEST eligible/positioned parent element. Say, if you have 4 <code>&lt;div&gt;</code>'s (div 1, div 2, div 3 and div 4) - all nested within the other -, and div 4 has <code>position: absolute</code>, and the only other div with a <code>position</code> set is div 2, then div 4 will position itself relative to div 2, ignoring div 3.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">position</td>
+                        <td class="property" id="value">fixed</td>
+                        <td>Lets you fix an element to a specific position on the page (regardless of scrolling), removing it from the normal flow of the document. This technique is often used for navigation bars on a web page.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">position</td>
+                        <td class="property" id="value">sticky</td>
+                        <td>Sometimes you will want a particular element to "stick" to a specified position as the page is scrolled further. The <code>sticky</code> value can let you do that. This might be useful when you have an article navigation bar that has to stay on the right hand side of the page while you scroll past a certain point.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">top, bottom, left, right</td>
+                        <td class="property" id="value">length, auto, %</td>
+                        <td>These properties are absolutetuly necessary for <code>position</code> to work.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">z-index</td>
+                        <td class="property" id="value">integer</td>
+                        <td>This property controls how far back or how far forward an element should appear on the web page when elements overlap (in a stack order like Illustrator layers). <br><br>
+                        <strong>Note:</strong> <code>z-index</code> will NOT work unless you add a <code>position</code> to it.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">display</td>
+                        <td class="property" id="value">inline, block, inline-block</td>
+                        <td>Every HTML element has a default <code>display</code> value that dictates if it can share horizontal space with other elements.
+                        <br><br>
+                        <ul>
+                            <li>
+                                <code>block</code>: These elements fill the entire width of the browser, from left to right, regardless of the size of their content. Some default block elements are headings (<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>), <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code> and <code>&lt;footer&gt;</code>.
+                            </li>
+                            <li>
+                                <code>inline</code>: These elements only take up as much horizontal space as their content requires and can be directly next to other elements. Some default inline elements are <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code> and <code>&lt;a&gt;</code>.
+                            </li>
+                            <li>
+                                <code>inline-block</code>: These elements keep properties of both, where the elements can appear next to each other and we can specify their dimensions using the width and height properties. Images (<code>&lt;img&gt;</code>) are the best example of default inline-block elements.
+                            </li>
+                        </ul>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="property">float</td>
+                        <td class="property" id="value">none, left, right</td>
+                        <td>We can use the <code>float</code> property to move an element as far right or as far left as it can within the container. HOWEVER, this is not recommended, as moving elements left or right for layout purposes is better suited for tools like CSS grid and flexbox.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">clear</td>
+                        <td class="property" id="value">none, left, right, both</td>
+                        <td>The <code>clear</code> property controls the flow next to floated elements (it decides what happens to the element next to a floating element). This is useful because, when we float multiple elements, their different dimensions can affect the layout on the page. Specifically, elements can "bump" into each other and not allow other elements to properly move to the left or right.</td>
+                    </tr>
+                </tbody>
+                </tbody>
+            </table>
+            <h4>CSS TIPS AND TRICKS</h4>
+            <h3>Box-Sizing</h3>
+            <p>
+                The default box model has one slight problem: the <code>border-width</code> and <code>padding</code> are not included in the dimensions of the box (<code>width</code> and <code>height</code>), making it difficult to accurately size a box, which will have problems when positioning elements in the future. To avoid this, we can just change the default property for <code>box-sizing</code> from <code>content-box</code> to <code>border-box</code>. This means the width and height properties (and min/max properties) includes content, padding and border. The content area is automatically sized based on the remaining width, after border and padding has been subsctracted.
+            </p>
+        </section>
+
+        <!-- Colors -->
+
+        <section>
+            <h2>Colors</h2>
+            <div class="line"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Values</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property">color</td>
+                        <td class="property" id="value">named, hex, rgb, hsl</td>
+                        <td>You can change colors through different styling options like:<br><br>
+                            <ul>
+                                <li>
+                                    <strong>Named Colors:</strong> There is already a list of existing colors that you can use as values, but it is very limited. For example, <code>darkgreen</code>. There is a full list <a href="https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/" target="_blank">here</a>.
+                                </li>
+                                <li>
+                                    <strong>Hexadecimal Colors:</strong> Any combination of six characters, between numbers and characters. In the hex system, there are 16 digits, where A-F represent 10-15. For example, <code>#24A587</code>.
+                                </li>
+                                <li>
+                                    <strong>RGB Colors:</strong> Any combination of 255 values for red, green and blue. For example, <code>rgb(140, 54, 98)</code>.
+                                </li>
+                                <li>
+                                    <strong>HSL Colors:</strong> This stands for "hue, saturation, luminance" values. For example, <code>hsl(140, 80%, 50%)</code>.
+                                </li>
+                            </ul>
+                    </tr>
+                    <tr>
+                        <td class="property">background-color</td>
+                        <td class="property" id="value">named, hex, rgb, hsl</td>
+                        <td>Lets you change the background color of an element.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">background-image</td>
+                        <td class="property" id="value">url("link")</td>
+                        <td>Lets you add an image as the background of an element such as a <code>&lt;div&gt;</code>.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">background-size</td>
+                        <td class="property" id="value">auto, length, %, cover, contain</td>
+                        <td>This property specifies the size of the background image.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">background-position</td>
+                        <td class="property" id="value">
+                            left top
+                            <br>left center
+                            <br>left bottom
+                            <br>right top
+                            <br>right center
+                            <br>right bottom
+                            <br>center top
+                            <br>center center
+                            <br>center bottom
+                        </td>
+                        <td>This property sets the starting position of the background image.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">opacity</td>
+                        <td class="property" id="value">decimal</td>
+                        <td>Establishes the opacity of an element (how transparent it can be). From <code>0.0</code> (fully transparent) to <code>1.0</code> (fully opaque)</td>
+                    </tr>
+                    <tr>
+                        <td class="property">color</td>
+                        <td class="property" id="value">rgba, hsla</td>
+                        <td>On the matter of opacity, we can also add an "alpha" value to the <code>rgb</code> and <code>hsl</code> values. The alpha value is a decimal number from <code>0.0</code> to <code>1.0</code>. If alpha is zero, the color will be completely transparent. If alpha is one, the color will be opaque. You may also do this for hexadecimal numbers, but it is a little unconventional. Just add a two-digit hexadecimal value at the end (<code>#42BC8280</code>) and it can range from <code>00</code> (transparent) to <code>FF</code> (opaque).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Typography-->
+        
+        <section>
+            <h2>Typography</h2>
+            <div class="line"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Values</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property">font-family</td>
+                        <td class="property" id="value">family-name, sans-serif, serif, monospace</td>
+                        <td>Lets you add a typeface to a text element. There are some important considerations when using typefaces:<br><br>
+                            <ul>
+                                <li>
+                                    <strong>Multi-Word Values:</strong> When specifying a typeface with multiple words, like Times New Roman, it is recommended to use quotation marks (' ') to group the words together. So, it should be <code>font-family: 'Times New Roman'</code>.
+                                </li>
+                                <li>
+                                    <strong>Web-Safe Fonts:</strong> There is a selection of fonts that will appear the same across all browsers and operating systems. They're called web safe fonts. You can find a list <a href="https://www.cssfontstack.com/" target="_blank">here</a>.
+                                </li>
+                                <li>
+                                    <strong>Fallback Fonts and Font Stacks:</strong> Web safe fonts are good <em>fallback fonts</em> that can be used if your prefered font is not available. You can do something like <code>font-family: Caslon, Georgia, 'Times New Roman'</code>, where Caslon is your preferred font and Georgia and Times New Roman are fallback fonts. When you specify a group of fonts, you have what is known as a <em>font stack.</em>
+                                </li>
+                                <li>
+                                    <strong>Serif and Sans-Serif:</strong> You can add <code>serif</code> and <code>sans-serif</code> keyword values as a final fallback font if nothing else in the font stack is available.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="property">font-size</td>
+                        <td class="property" id="value">
+                            length
+                            <br>%
+                            <br>xx-small
+                            <br>x-small
+                            <br>small
+                            <br>medium
+                            <br>large
+                            <br>x-large
+                            <br>xx-large
+                            <br>smaller
+                            <br>larger
+                        </td>
+                        <td>This property controls the size of the text.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">font-weight</td>
+                        <td class="property" id="value">bold, normal, lighter, bolder, 100-900</td>
+                        <td>This property controls how bold or thin text appears. It can take any of the following keyword values:<br><br>
+                            <ul>
+                                <li><code>bold</code>: Bold font weight.</li>
+                                <li><code>normal</code>: Normal font weight. This is the default value.</li>
+                                <li><code>lighter</code>: One font weight lighter than the element's parent value.</li>
+                                <li><code>bolder</code>: One font weight bolder than the element's parent value.</li>
+                                <li><strong>Numerical Values:</strong> From <code>100</code> (lightest) to <code>1000</code> (boldest). It is common practice to use increments of 100. A font weight of <code>400</code> is equal to the keyword value <code>normal</code> and a font weight of <code>700</code> is equal to <code>bold</code>. It's important to note that not all fonts can be assigned a numeric font weight and not all numeric font weights are available to all fonts. Check the font information first.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="property">font-style</td>
+                        <td class="property" id="value">normal, italic, oblique</td>
+                        <td>You can italicize text with this property.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">text-transform</td>
+                        <td class="property" id="value">none, capitalize, uppercase, lowercase</td>
+                        <td>This property lets you style the text to appear in either all uppercase or lowercase. You might find this especially useful when styling headings.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Text Layout -->
+
+        <section>
+            <h2>Text Layout</h2>
+            <div class="line"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Values</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="property">letter-spacing</td>
+                        <td class="property" id="value">length</td>
+                        <td>This property sets the spacing between letters. It can sometimes help the readibility of certain fonts or styles. It can take length values in units, such as 2px or 0.5em.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">word-spacing</td>
+                        <td class="property" id="value">length</td>
+                        <td>Like letter spacing, you can set the spacing between words. It might help enhance the readibility of bolded or enlarged text and it can also take length values in units.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">line-height</td>
+                        <td class="property" id="value">normal, number, length, %</td>
+                        <td>This is basic in text formatting. You usually see this in text editors like Words or Docs. Line height values can be a unitless number, such as 1.2, or a length value, such as 12px, 5% or 2em. Generally, the unitless value is preferred since it is responsive based on the current font size.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">text-align</td>
+                        <td class="property" id="value">left, center, right, justify</td>
+                        <td>The <code>text-align</code> property aligns text to its parent element. It can have either one of these values: <br><br>
+                            <ul>
+                                <li><code>left</code>: Aligns text to the left side of its parent element, which in this case is the browser.</li>
+                                <li><code>center</code>: Centers text inside of its parent element.</li>
+                                <li><code>right</code>: Aligns text to the right side of its parent element.</li>
+                                <li><code>justify</code>: Spaces out text in order to align with the right and left side of the parent element.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Linking Web Fonts -->
+
+        <section>
+            <h2>Linking Web Fonts</h2>
+            <div class="line"></div>
+            <h4>SOLUTION 1</h4>
+            <h3>Web Fonts using &lt;link&gt;</h3>
+            <p>
+                You can find the link to fonts like Google Fonts on their <a href="https://fonts.google.com/?query=Jua" target="_blank">website</a> and then add them to the <code>&lt;head&gt;</code> element in your HTML document. Then you can style it with CSS.
+            </p>
+            <p>
+                For example, you might have to do this:
+            </p>
+            <div class="code-box">
+                <p class="html">&lt;head&gt;</p>
+                <p class="indent html">&lt;link <span id="attribute-name">href=</span><span id="attribute-value">"https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"</span> <span id="attribute-name">rel=</span><span id="attribute-value">"stylesheet"</span>&gt;</span></p>
+                <p class="html">&lt;/head&gt;</p>
+            </div>
+            <h4>SOLUTION 2</h4>
+            <h3>Web Fonts using @font-face</h3>
+            <p>
+                Fonts can also be added using a <code>@font-face</code> ruleset in your CSS stylesheet. Fonts can be downloaded just like any other file on the web.
+            </p>
+            <ul>
+                <li>OTF (OpenType Font)</li>
+                <li>TTF (TrueType Font)</li>
+                <li>WOFF (Web Open Font Format)</li>
+                <li>WOFF2 (Web Open Font Format 2)</li>
+            </ul>
+            <p>
+                The different formats are a progression of standards for how fonts will work with different browsers, with WOFF2 being the most progressive. It's a good idea to include TTF, WOFF, and WOFF2 formats with your @font-face rule to ensure compatibility on all browsers.
+            </p>
+            <p>
+                The ruleset would look something like this:
+            </p>
+            <div class="code-box">
+                <p>@font-face {</p>
+                <p class="indent css">     font-family: <span id="attribute-value">'MyParagraphFont'</span>;</p>
+                <p class="indent css">     src: <span id="css-value">url('fonts/Roboto.woff2') format('woff2')</span>,</p>
+                <p class="indent css">     <span id="css-value">url('fonts/Roboto.woff') format('woff')</span>,</p>
+                <p class="indent css">     <span id="css-value">url('fonts/Roboto.ttf') format('truetype')</span>;</p>
+                <p>}</p>
+            </div>
+        </section>
+            
+    </section>
+
+</body>
+
+<footer>
+    <section id="white-space"></section>
+</footer>
