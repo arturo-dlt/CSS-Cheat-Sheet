@@ -119,11 +119,11 @@ th {
     background-color: rgb(246, 246, 246);
 }
 
-td {
+td:nth-child(3) {
     text-align: justify;
 }
 
-td, p {
+td, p, li {
     font-size: 14px;
 }
 

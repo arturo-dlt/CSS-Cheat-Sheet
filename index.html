@@ -95,6 +95,41 @@
                         <td>Pseudo-class Selectors</td>
                         <td> These will let you change styles when specific interactions occur, like adding a border in an <code>&lt;input&gt;</code> element to give it more focus, a link <code>&lt;a&gt;</code> changing color when you hover on it or a <code>&lt;button&gt;</code> being "disabled" and then set to "active" after you complete certain tasks. Pseudo-class selectors will give different "states" to elements. Some pseudo-classes are <code>:focus</code>, <code>:visited</code>, <code>:disabled</code>, and <code>:active</code>.</td>
                     </tr>
+                    <tr>
+                        <td class="property">table + p</td>
+                        <td>Adjacent Sibling Selector</td>
+                        <td>This selects all <code>&lt;p&gt;</code> that directly follow a <code>&lt;table&gt;</code>. Elements that follow one another are called siblings. They're on the same level, or depth. In the HTML markup, elements that have the same indentation are siblings.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">table ~ p</td>
+                        <td>General Sibling Selector</td>
+                        <td>You can select all siblings of an element that follow it. This is like the Adjacent Selector (A + B) except it gets all of the following elements instead of one.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">div p:first-child</td>
+                        <td>First Child Pseudo-Selector</td>
+                        <td>You can select the first child element. A child element is any element that is directly nested in another element. You can combine this pseudo-selector with other selectors. The one used in this example would select all first child <code>&lt;p&gt;</code> elements that are in a <code>&lt;div&gt;</code>.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">:only-child</td>
+                        <td>Only Child Pseudo-Selector</td>
+                        <td>Selects an element that is the only element inside of another one.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">:last-child</td>
+                        <td>Last Child Pseudo-Selector</td>
+                        <td>You can use this selector to select an element that is the last child element inside of another element.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">:nth-child(A)</td>
+                        <td>Nth Child Pseudo-Selector</td>
+                        <td>Selects the nth (Ex: 1st, 3rd, 12th etc.) child element in another element.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">:nth-last-child(A)</td>
+                        <td>Nth Last Child Pseudo-Selector</td>
+                        <td>Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!</td>
+                    </tr>
                 </tbody>
             </table>
             <h4>CSS TIPS AND TRICKS</h4>
