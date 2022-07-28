@@ -42,7 +42,7 @@
                     </tr>
                     <tr>
                         <td class="property">h1</td>
-                        <td>Type</td>
+                        <td>Element</td>
                         <td>Selects a specific HTML element.</td>
                     </tr>
                     <tr>
@@ -627,7 +627,7 @@
                     </tr>
                     <tr>
                         <td class="property">a:hover</td>
-                        <td class="property" id="value">color, background-color, border</td>
+                        <td class="property" id="value">any property</td>
                         <td>Using the <code>:hover</code> pseudo-selector you can style the element when a specific "state" is active. In this case, it would activate when you hover the mouse over the element.</td>
                     </tr>
                     <tr>
@@ -636,11 +636,27 @@
                         <td>This property sets the mouse cursor, if any, to show when the mouse pointer is over an element. Setting it to <code>pointer</code> is a nice way of knowing that something is a link. Usually, browser user agent stylesheets already include these. It is recommended to add it to all the <code>&lt;a&gt;</code> elements, instead of just the <code>a:hover</code> state, as the browser will only change cursor styles on hover by default.<br><br>
                         <strong>Note:</strong> Hover state styling should never be used as the sole indication that something is a link. Users should not be forced to move their mouse over an entire document to tell what might be clickable. Additionally, hover states are not accesible in mobile browsers.</td>
                     </tr>
+                    <tr>
+                        <td class="property">:link</td>
+                        <td class="property" id="value">any property</td>
+                        <td>The <code>:link</code> pseudo-selector is the default state of an unvisited link.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">:visited</td>
+                        <td class="property" id="value">any property</td>
+                        <td>The <code>:visited</code> pseudo-selector styles the link related to the user's history with it.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">:active</td>
+                        <td class="property" id="value">any property</td>
+                        <td>The <code>:active</code> pseudo-selector is useful for styling links when they have been clicked and are currently active.<br><br>
+                        <strong>Note:</strong> The ordering of link pseudo-class rules is important, as one should override the other in this order: <code>:link</code>, <code>:visited</code>, <code>:hover</code> and <code>:active</code>.</td>
+                    </tr>
                 </tbody>
             </table>
             <h4>CSS TIPS AND TRICKS</h4>
             <h3>Link Styling</h3>
-            <p>Link styles should not be recplicated in other page text. It should contrast from the rest of the text color, style or decorations. It keeps the styles consistent and intuitive. Links have to look "clickable".
+            <p>Link styles should not be replicated in other page text. It should contrast from the rest of the text color, style or decorations. It keeps the styles consistent and intuitive. Links have to look "clickable". Remember that you cannot rely even on cursor styles because mobile devices don't have the ability to hover any element. Designers should use signifiers to demostrate elements that afford interaction.
             <h3>Semantics and Context</h3>
             <p>Also, <a href="https://en.wikipedia.org/wiki/Anchor_text" title="Anchor text must be descriptive" target="_blank">anchor text</a>, the text itself of a link, should be descriptive of the linked resource. See what I did there?</p>
             <p>You can also add additional context with the HTML <code>title</code> attribute, as it is useful for additional context or advisory text for clickable elements. Most browsers will display the text of a <code>title</code> as a tooltip, meaning when a user hovers their cursor over an element, the text will appear in a small box near the cursor. <strong>But beware</strong>, the <code>title</code> attribute is known to cause a variety of accesibility issues, so it is not always recommended. There are other ways to create tooltips, which include a mixed use of CSS and Javascript, but that is more advanced.</p>
