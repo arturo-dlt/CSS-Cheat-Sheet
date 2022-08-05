@@ -96,9 +96,14 @@
                         <td> These will let you change styles when specific interactions occur, like adding a border in an <code>&lt;input&gt;</code> element to give it more focus, a link <code>&lt;a&gt;</code> changing color when you hover on it or a <code>&lt;button&gt;</code> being "disabled" and then set to "active" after you complete certain tasks. Pseudo-class selectors will give different "states" to elements. Some pseudo-classes are <code>:focus</code>, <code>:visited</code>, <code>:disabled</code>, and <code>:active</code>.</td>
                     </tr>
                     <tr>
+                        <td class="property">div > p</td>
+                        <td>Children Selector</td>
+                        <td>This selects all <code>&lt;p&gt;</code> elements where the parent is a  <code>&lt;div&gt;</code> element.</td>
+                    </tr>
+                    <tr>
                         <td class="property">table + p</td>
                         <td>Adjacent Sibling Selector</td>
-                        <td>This selects all <code>&lt;p&gt;</code> that directly follow a <code>&lt;table&gt;</code>. Elements that follow one another are called siblings. They're on the same level, or depth. In the HTML markup, elements that have the same indentation are siblings.</td>
+                        <td>This selects the <code>&lt;p&gt;</code> that directly follows a <code>&lt;table&gt;</code>. Elements that follow one another are called siblings. They're on the same level, or depth. In the HTML markup, elements that have the same indentation are siblings.</td>
                     </tr>
                     <tr>
                         <td class="property">table ~ p</td>
@@ -129,6 +134,16 @@
                         <td class="property">:nth-last-child(A)</td>
                         <td>Nth Last Child Pseudo-Selector</td>
                         <td>Selects the children from the bottom of the parent. This is like nth-child, but counting from the back!</td>
+                    </tr>
+                    <tr>
+                        <td class="property">::after</td>
+                        <td>After Pseudo-Selector</td>
+                        <td>Inserts something after the content of an element. This is often used with the <code>content</code> property, to define what content you want to add.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">::before</td>
+                        <td>After Pseudo-Selector</td>
+                        <td>Inserts something before the content of an element.</td>
                     </tr>
                 </tbody>
             </table>
@@ -598,16 +613,16 @@
                 <tbody>
                     <tr>
                         <td class="property">text-decoration</td>
-                        <td class="property" id="value">none, underline, overline, line-through</td>
-                        <td>This property sets the appearance of decorative lines on text. It is a shorthand property for <code>text-decoration-line</code>, <code>text-decoration-style</code>, <code>text-decoration-color</code> and <code>text-decoration-thickness</code>. Using an underline an a <code>color:blue</code> is one of the most common ways to style a link on a website. You might use any other CSS properties to style a link, like <code>background-color</code>, <code>font-weight</code> or <code>border</code>.</td>
-                    </tr>
-                    <tr>
-                        <td class="property">text-decoration-line</td>
                         <td class="property" id="value">text-decoration-line <br>
                             text-decoration-color <br>
                             text-decoration-style <br>
                             text-decoration-thickness</td>
-                        <td>This property sets the kind of text decoratino to use (like, underlin,e overline, line-through). <br><br>
+                        <td>This property sets the appearance of decorative lines on text. It is a shorthand property for <code>text-decoration-line</code>, <code>text-decoration-style</code>, <code>text-decoration-color</code> and <code>text-decoration-thickness</code>. Using an underline an a <code>color:blue</code> is one of the most common ways to style a link on a website. You might use any other CSS properties to style a link, like <code>background-color</code>, <code>font-weight</code> or <code>border</code>.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">text-decoration-line</td>
+                        <td class="property" id="value">none, underline, overline, line-through</td>
+                        <td>This property sets the kind of text decoration to use (like underline, overline, line-through). <br><br>
                         <strong>Note:</strong> You can also combine more than one value, like <code>underline</code> and <code>overline</code> to display lines both under and over the text.</td>
                     </tr>
                     <tr>
@@ -652,14 +667,70 @@
                         <td>The <code>:active</code> pseudo-selector is useful for styling links when they have been clicked and are currently active.<br><br>
                         <strong>Note:</strong> The ordering of link pseudo-class rules is important, as one should override the other in this order: <code>:link</code>, <code>:visited</code>, <code>:hover</code> and <code>:active</code>.</td>
                     </tr>
+                    <tr>
+                        <td class="property">transition</td>
+                        <td class="property" id="value">transition-property, transition-duration, transition-timing-function, transition-delay</td>
+                        <td>You can select any property in CSS to have a transition if you have set two different values of the same property between pseudo-selector states. Typically, a transition effect should occur when a user hovers over an element, like a button.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">transition-property</td>
+                        <td class="property" id="value">property</td>
+                        <td>The transition-property property specifies the name of the CSS property the transition effect is for (the transition effect will start when the specified CSS property changes).</td>
+                    </tr>
+                    <tr>
+                        <td class="property">transition-duration</td>
+                        <td class="property" id="value">time</td>
+                        <td>It specifies how many seconds (s) or milliseconds (ms) a transition effect takes to complete.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">transition-timing-function</td>
+                        <td class="property" id="value">ease, linear, ease-in, ease-out, ease-in-out, step-start, step-end, cubic-bezier(n,n,n,n)</td>
+                        <td>The transition-timing-function property specifies the speed curve of the transition effect. This property allows a transition effect to change speed over its duration.</td>
+                    </tr>
+                    <tr>
+                        <td class="property">transition-delay</td>
+                        <td class="property" id="value">time</td>
+                        <td>It specifies when the transition effect will start.</td>
+                    </tr>
                 </tbody>
             </table>
             <h4>CSS TIPS AND TRICKS</h4>
             <h3>Link Styling</h3>
-            <p>Link styles should not be replicated in other page text. It should contrast from the rest of the text color, style or decorations. It keeps the styles consistent and intuitive. Links have to look "clickable". Remember that you cannot rely even on cursor styles because mobile devices don't have the ability to hover any element. Designers should use signifiers to demostrate elements that afford interaction.
+            <p>
+                Link styles should not be replicated in other page text. It should contrast from the rest of the text color, style or decorations. It keeps the styles consistent and intuitive. Links have to look "clickable". Remember that you cannot rely even on cursor styles because mobile devices don't have the ability to hover any element. Designers should use signifiers to demostrate elements that afford interaction.
+            </p>
             <h3>Semantics and Context</h3>
-            <p>Also, <a href="https://en.wikipedia.org/wiki/Anchor_text" title="Anchor text must be descriptive" target="_blank">anchor text</a>, the text itself of a link, should be descriptive of the linked resource. See what I did there?</p>
-            <p>You can also add additional context with the HTML <code>title</code> attribute, as it is useful for additional context or advisory text for clickable elements. Most browsers will display the text of a <code>title</code> as a tooltip, meaning when a user hovers their cursor over an element, the text will appear in a small box near the cursor. <strong>But beware</strong>, the <code>title</code> attribute is known to cause a variety of accesibility issues, so it is not always recommended. There are other ways to create tooltips, which include a mixed use of CSS and Javascript, but that is more advanced.</p>
+            <p>
+                Also, <a href="https://en.wikipedia.org/wiki/Anchor_text" title="Anchor text must be descriptive" target="_blank">anchor text</a>, the text itself of a link, should be descriptive of the linked resource. See what I did there?
+            </p>
+            <p>
+                You can also add additional context with the HTML <code>title</code> attribute, as it is useful for additional context or advisory text for clickable elements. Most browsers will display the text of a <code>title</code> as a tooltip, meaning when a user hovers their cursor over an element, the text will appear in a small box near the cursor. <strong>But beware</strong>, the <code>title</code> attribute is known to cause a variety of accesibility issues, so it is not always recommended. There are other ways to create tooltips, which include a mixed use of CSS and Javascript, but that is more advanced.
+            </p>
+            <h3>Secondary Navigation and Breadcrumbs</h3>
+            <p>
+                It is recommended to add secondary navigation for websites that have a certain type of complexity. For example, if you have an appartment listing site or an e-commerce, you might have lots of different categories (Clothes > Men > Shoes > Blue). Adding this "trail of breadcrumbs" (like Hanzel and Gretel did) is a useful tool for users navigating your site. This way, users can quickly know where they are on the site and they can go back to browse wherever needed on their trail, instead of going back to the main page and searching all over again from the start.
+            </p>
+            <p>
+                Breadcrumbs are usually displayed as a horizontal list of pages and take up minimal space. Users expect to find them in the header, left-aligned, and below any primary navigation. Typically they are separated with a “>” or a “/“ symbol. To style it, you can do something like this:
+            </p>
+            <div class="code-box">
+                <p>.nav-class <span id="attribute-value">li+li::before</span> {</p>
+                <p class="indent css">padding:<span id="css-value"> 10px</span>;</p>
+                <p class="indent css">content:<span id="css-value"> ">"</span>;</p>
+                <p>}</p>
+            </div>
+            <p>
+                There are three major types of breadcrumbs:
+            </p>
+            <h5>Location</h5>
+            <p>This are based on the hierarchical structure of the site.</p>
+            <p><code>Fashion > Men > Shoes</code></p>
+            <h5>Attribute</h4>
+            <p>Based on attributes of the current page or item.</p>
+            <p><code>Shoes > Flats > Brown</code></p>
+            <h5>Path</h4>
+            <p>Unique to a user's journey on the site.</p>
+            <p><code>Home > About > Register</code></p>
         </section>
             
     </section>
